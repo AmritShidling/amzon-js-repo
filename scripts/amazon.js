@@ -1,3 +1,4 @@
+import {cart} from "../data/cart.js";
 let productsHtml = '';
 
 products.forEach((product) => {
@@ -58,9 +59,10 @@ document.querySelector('.js-products-grid').innerHTML = productsHtml;
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button)=>{
   button.addEventListener(('click'), ()=>{
-    productId = button.dataset.productId;
-    quantity = 1;
-    productFound = null
+    // console.log(button.dataset.productId);
+    const productId = button.dataset.productId;
+    let quantity = 1;
+    let productFound = null
     cart.forEach((item) => {
       if(item.productId === productId){
         productFound = item;
