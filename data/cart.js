@@ -6,7 +6,6 @@ export let cart = [{
   quantity: 1
 }];
 
-
 export function addToCart(productId){
   let quantity = 1;
   let productFound = null;
