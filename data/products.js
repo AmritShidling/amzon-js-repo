@@ -63,6 +63,18 @@ const tShirt = new Clothing({
   sizeChartLink: "images/clothing-size-chart.png"
 });
 
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString())
+
+function logThis(){
+  console.log(this.a);
+}
+logThis.call({
+  a: 'tes', b: 'ef'
+});
+*/
 
 export const products = [
   {
