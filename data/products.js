@@ -77,6 +77,29 @@ logThis.call({
 */
 
 export let products = []
+
+export function loadProductsFetch(fun){
+  const promise = fetch(
+    'https://supersimplebackend.dev/products'
+  ).then((response)=>{
+    return response.json();
+  }).then((productsData)=>{
+    // console.log(productsData);
+    products = productsData.map((productDetail)=>{
+      if(productDetail.type === 'clothing')
+        return new Clothing(productDetail);
+      return new Product(productDetail);
+    });
+    console.log('Load Products');
+  });
+  return promise;
+}
+/*
+loadProduct().then((resolve)=>{
+  console.log()
+});
+
+
 export function loadProducts(fun){
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', ()=>{
@@ -91,7 +114,7 @@ export function loadProducts(fun){
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
-
+*/
 /*
 export const products = [
   {
